@@ -1,0 +1,118 @@
+@use 'sass:math';
+@use '../base'as *;
+
+.exchange__grid {
+
+    display: grid;
+    grid-template-columns: 1fr 500px;
+    grid-template-areas: 
+    'description steps';
+    gap: 2em;
+
+    align-items: center;
+
+    @media (max-width: 868px) {
+        grid-template-columns: 1fr;
+        gap: 1em;
+        grid-template-areas: 
+        'description'
+        'steps';
+    }
+
+    .description__col {
+        grid-area: description;
+    }
+
+    .steps__col {
+        grid-area: steps;
+    }
+
+    .col {
+
+        .homepage__description {
+            @media (max-width: 868px) { 
+                text-align: center;
+            }
+            .small__description {
+
+                color: $textcolor--secondary;
+                text-transform: uppercase;
+
+                font-size: $small--font--size;
+                font-weight: 500;
+
+                @media (max-width: 468px) {  
+                    max-width: 100%;
+                    font-size: math.div($small--font--size, 1.5);
+                }
+            }
+
+            .title {
+
+                color: $textcolor--primay;
+                max-width: 21ch;
+
+                font-size: $big--font--size;
+                font-weight: 700;
+
+                @media (max-width: 968px) {
+                    font-size: math.div($big--font--size, 1.2);
+                    margin: auto;
+                }
+
+                @media (max-width: 468px) {  
+                    max-width: 100%;
+                    font-size: math.div($big--font--size, 2.4);
+                }
+
+            }
+
+            .description {
+                color: $textcolor--secondary;
+                max-width: 45ch;
+
+                font-size: $medium--font--size;
+                font-weight: 500;
+                line-height: 4rem;
+
+                margin: .8em 0;
+
+                @media (max-width: 968px) {
+                    line-height: 3rem;
+                    font-size: math.div($medium--font--size, 1.22);
+                }
+                @media (max-width: 868px) {  
+                    margin: .8em auto;
+                }
+                @media (max-width: 468px) {  
+                    font-size: $medium--font--size - 0.8;
+                    line-height: 2.5rem;
+                    margin: .6em auto;
+                }
+            }
+
+            .accepted__cryptocurrencies--list {
+                display: flex;
+                gap: 1em;
+                align-items: center;
+
+                @media (max-width: 868px) { 
+                    justify-content: center;
+                }
+
+                @media (max-width: 868px) {  
+                    img {
+                        max-width: 32px !important;
+                    }
+                }
+                @media (max-width: 468px) {  
+                    img {
+                        max-width: 26px !important;
+                    }
+                }
+            }
+        }
+
+    }
+
+}

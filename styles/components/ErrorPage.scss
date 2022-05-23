@@ -1,0 +1,39 @@
+.error__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .header {}
+
+    .description {
+        text-align: center;
+        h2 {
+            color: #FFFFFF;
+            font-size: 2.6rem;
+        }
+
+        p {
+            margin-top: 5px;
+            font-size: 1.8rem;
+            color: #bec7da;
+        }
+        margin-bottom: 20px;
+    }
+    .go__back {
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        color: #020d16;
+        cursor: pointer;
+        padding: 1.2em;
+        font-size: 1.8rem;
+        font-weight: 700;
+        border-radius: 41px;
+        background: #41a4ff;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        transition: all .15s ease-in-out;
+    }
+}

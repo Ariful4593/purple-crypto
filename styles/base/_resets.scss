@@ -1,0 +1,182 @@
+@charset "UTF-8";
+
+@use '' as *;
+@use '../utils/mixins' as *;
+@use '../components/ErrorPage.scss' as *;
+
+@font-face {
+    font-family: 'Acumin';
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: 100%;
+    font-display: swap;
+    font-named-instance: 'Regular';
+    src: local('Acumin'), url("../../public/fonts/Acumin-RPro.woff2") format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Acumin';
+    font-style: normal;
+    font-weight: 700;
+    font-stretch: 100%;
+    font-display: swap;
+    font-named-instance: 'Bold';
+    src: local('Acumin'), url("../../public/fonts/Acumin-BdPro.woff2") format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+::selection {
+    background: $color--primary;
+    color: $textcolor--primay;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    margin-left: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b1b1b1;
+    border-radius: 41px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2c2d34;
+}
+
+.container {
+    max-width: 1160px;
+    margin: auto;
+    padding: 1.5em;
+    @media (max-width: 468px) {
+        padding: 1em;
+    }
+}
+
+.iframe__container {
+    display: grid;
+    grid-template-columns: 500px;
+    @media (max-width:868px) {
+        grid-template-columns: 1fr;
+    }
+    align-items: center;
+    padding: 20px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: 'Acumin', Helvetica, Arial, sans-serif;
+    font-size: 62.5%;
+}
+
+body {
+    background: $color--dark;
+    background-image: url("https://www.purpleprison.co/assets/img/space-background.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 0;
+    display: block;
+    min-height: 100vh;
+    margin: 0;
+    text-rendering: optimizeSpeed;
+    font-size: $regular--font--size;
+
+    @media (min-width: 868px) {
+        @include flex-center;
+    }
+
+}
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid
+}
+
+h1+h2 {
+    page-break-before: avoid;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+table,
+pre,
+img,
+svg,
+blockquote,
+a {
+    break-inside: avoid;
+}
+
+ul,
+ol,
+dl {
+    page-break-before: avoid;
+}
+
+strong {
+    font-weight: 700;
+}

@@ -1,0 +1,355 @@
+@use '../base'as *;
+@use '../utils/inputs'as input;
+@use '../utils/animations'as animation;
+
+.step__container {
+    .header {
+        margin-bottom: 1em;
+
+        @media (max-width: 468px) {
+            margin-bottom: .6em;
+        }
+    }
+
+    .body {
+        background: $color--medium--dark;
+        padding: 2em;
+        border-radius: 10px;
+
+        @media (max-width: 468px) {
+            padding: 1em;
+        }
+
+        .errors__tab {
+            margin-top: 2em;
+
+            .error__tab {
+                position: relative;
+                width: 100%;
+                padding: 20px;
+                z-index: 1000;
+                border-radius: 10px;
+                overflow: hidden;
+                background: #8d1f18;
+                border: 1px solid #ff4a3d;
+
+                &:not(:last-of-type) {
+                    margin-bottom: 10px;
+                }
+
+
+                p {
+                    text-align: center;
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                    color: #ffb7b2;
+                }
+            }
+        }
+
+        .body__description {
+
+            text-align: center;
+
+            .title {
+                color: $textcolor--primay;
+
+                font-size: $medium--font--size;
+                font-weight: 700;
+
+                @media (max-width: 468px) {
+                    font-size: $medium--font--size - 0.4;
+                }
+            }
+
+            .description {
+                color: $textcolor--secondary;
+
+                font-size: $regular--font--size;
+                font-weight: 500;
+
+                @media (max-width: 468px) {
+                    font-size: $regular--font--size - 0.4;
+                }
+            }
+        }
+
+        .user__inputs {
+            margin: 2em 0;
+
+            .input {
+                @include input.input--box;
+                border: 1px solid #ffffff0d;
+            }
+
+            .user__input {
+                @include input.input--box--value;
+            }
+
+            .input:nth-child(2),
+            .input:nth-child(3) {
+                display: block;
+
+                input {
+                    width: 100%;
+                }
+            }
+
+            @media (max-width: 468px) {
+                margin: 1em 0;
+            }
+
+            .grid__inputs {
+
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+
+                margin-bottom: 1em;
+                gap: 1em;
+
+                @media (max-width: 568px) {
+                    grid-template-columns: 1fr;
+                }
+
+                .input {
+                    margin-bottom: 0;
+
+                    .value__receive {
+                        color: $textcolor--primay;
+                    }
+                }
+            }
+        }
+
+        .footer {
+            .action__btn {
+
+                color: $textcolor--primary--contrast;
+                cursor: pointer;
+
+                width: 100%;
+                padding: 1.2em;
+
+                font-size: $semi--regular--font--size;
+                font-weight: 700;
+
+                border-radius: 41px;
+                background: $color--primary;
+
+                border: none;
+                outline: none;
+                box-shadow: none;
+
+                transition: all .15s ease-in-out;
+
+                @media (max-width: 468px) {
+                    padding: 1em;
+                    font-size: $semi--regular--font--size - 0.4;
+                }
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+
+        .transactions__status {
+            display: grid;
+            gap: 1em;
+            margin-top: 2em;
+
+            .transaction {
+                .title {
+                    font-size: $semi--regular--font--size;
+                    color: $textcolor--primay;
+                    font-weight: 700;
+
+                    @media (max-width: 468px) {
+                        font-size: $semi--regular--font--size - 0.4;
+                    }
+                }
+
+                .address,
+                .status {
+                    font-size: $regular--font--size;
+                    color: $textcolor--secondary;
+
+                    @media (max-width: 468px) {
+                        font-size: $semi--regular--font--size - 0.6;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.step__container__last--step {
+    max-width: 600px;
+
+    .body {
+        border-radius: 10px 10px 0 0;
+
+        .user__inputs {
+            margin: 1em 0 0 0;
+
+            .grid__inputs {
+                margin: 0;
+            }
+        }
+    }
+
+    .transaction__footer {
+        background: $color--light--dark;
+        padding: 2em;
+        border-radius: 0 0 10px 10px;
+
+        @media (max-width: 468px) {
+            padding: 1em;
+        }
+
+        .title {
+            color: $textcolor--primay;
+            margin-bottom: .5em;
+            font-size: $regular--font--size;
+
+            @media (max-width: 468px) {
+                font-size: $regular--font--size - 0.2;
+            }
+        }
+
+        .transactions__status {
+            display: grid;
+            gap: 1em;
+            margin-bottom: 1em;
+
+            .transaction {
+                .title {
+                    font-size: $small--font--size;
+                    color: $textcolor--secondary;
+
+                    @media (max-width: 468px) {
+                        font-size: $semi--regular--font--size - 0.6;
+                    }
+                }
+
+                .currency {
+                    font-weight: 700;
+                    font-size: $semi--regular--font--size;
+                    color: $textcolor--primay;
+
+                    @media (max-width: 468px) {
+                        font-size: $semi--regular--font--size - 0.2;
+                    }
+                }
+
+                .address {
+                    font-size: $small--font--size + .2;
+                    color: $color--primary;
+
+                    @media (max-width: 468px) {
+                        font-size: $semi--regular--font--size - 0.4;
+                    }
+
+                    @media (max-width: 375px) {
+                        font-size: $semi--regular--font--size - 0.6;
+                    }
+                }
+            }
+        }
+
+        .QR__code {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1em;
+
+            img {
+                border-radius: 10px;
+            }
+        }
+        .url {
+            word-break: break-all;
+        }
+
+        .alert__box,
+        .giftcard__box {
+            padding: 1em;
+            background: $color--dark;
+            border-radius: 10px;
+            border: 1px solid rgba(#FFFFFF, .15);
+
+            @media (max-width: 468px) {
+                padding: .6em;
+            }
+
+            p {
+                text-align: center;
+                font-size: $regular--font--size;
+                color: $textcolor--secondary;
+
+                @media (max-width: 468px) {
+                    font-size: $semi--regular--font--size - 0.6;
+                }
+            }
+        }
+
+        .giftcard__box {
+            background: #183e62;
+            border: 1px solid #41a4ff;
+            cursor: pointer;
+
+            p {
+                color: #41a4ff;
+            }
+        }
+    }
+}
+
+.booster {
+    background: #ea6dff;
+    padding: .5em;
+    margin: 1em auto;
+    border-radius: 41px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    transition: all .2s ease-in-out;
+    animation: booster 3s infinite ease-out;
+
+    width: 250px;
+
+    svg {
+        max-width: 32px;
+    }
+
+    .coin__multiplier {
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-left: .5em;
+        color: #000000;
+    }
+
+    @media (max-width: 568px) {
+        padding: .1em;
+        svg {
+            max-width: 24px;
+        }
+        .coin__multiplier {
+            font-size: 1.4rem;
+        }
+    }
+
+    @keyframes booster {
+        0% {
+            transform: scale(1.02);
+            filter: drop-shadow(0px 0px 8px rgba(234, 109, 255, 0.7));
+        }
+        100% {
+            filter: drop-shadow(0px 0px 8px rgba(234, 109, 255, 0.2));
+        }
+    }
+}

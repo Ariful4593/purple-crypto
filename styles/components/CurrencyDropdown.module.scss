@@ -1,0 +1,171 @@
+@use '../base'as *;
+@use '../utils/mixins'as mixin;
+@use '../utils/animations'as animation;
+
+.currency__dropdown {
+    position: absolute;
+    width: 100%;
+    top: 90px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: rgba($color--light--dark--active, .85);
+    padding: .5em;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    animation: falling-from-top .12s ease-in-out;
+
+    border: 1px solid rgba(#FFFFFF, .05);
+
+    overflow: hidden;
+
+    &::before {
+        box-shadow: inset 0 0 2000px rgb(36 50 78);
+        filter: blur(10px);
+        background: inherit;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    label {
+        background: rgba(#FFFFFF, .05);
+        border-radius: 10px;
+
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .search__bar {
+            position: relative;
+            padding: 1em 1em 1em 0;
+            border: none;
+            background: none;
+
+            color: $textcolor--primay;
+            font-size: $regular--font--size;
+
+            @include mixin.input-placeholder {
+                color: rgba($textcolor--secondary--in--box, .7);
+            }
+        }
+
+        .search__icon, .close__icon {
+            background: url("data:image/svg+xml;charset=utf8,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5 20C15.7467 20 20 15.7467 20 10.5C20 5.25329 15.7467 1 10.5 1C5.25329 1 1 5.25329 1 10.5C1 15.7467 5.25329 20 10.5 20Z' stroke='%23FFFFFF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M21 21L19 19' stroke='%23FFFFFF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-size: 100% 100%;
+            width: 22px;
+            height: 22px;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            margin-left: 1em;
+        }
+
+        .close__icon  {
+
+            cursor: pointer;
+
+            width: 24px;
+            height: 24px;
+
+            margin-left: auto;
+            margin-right: 1em;
+
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z' stroke='%23FFFFFF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9.16998 14.83L14.83 9.17004' stroke='%23FFFFFF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M14.83 14.83L9.16998 9.17004' stroke='%23FFFFFF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+            animation: closeIcon .3s ease-in-out;
+            opacity: .5;
+        }
+
+        @keyframes closeIcon {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: .5;
+            }
+        }
+
+    }
+
+    .currencies {
+
+        max-height: 240px;
+        overflow: hidden;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: rgba(#FFFFFF, .05);
+            border-radius: 41px;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: rgba($color--primary, .5);
+            border-radius: 41px;
+        }
+
+        .currency {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all .15s ease-in-out;
+            border-radius: 10px;
+            padding: .5em 1em;
+
+            &:hover {
+                background: rgba($color--primary, .2);
+            }
+
+            .icon {}
+
+            .description {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .abreviation {
+                    font-size: $small--font--size;
+                    color: $textcolor--secondary--in--box;
+                    font-weight: 700;
+                }
+
+                .name {
+                    font-size: $regular--font--size;
+                    color: $textcolor--primay;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+    .no__currency--found {
+        color: $textcolor--secondary--in--box;
+        text-align: center;
+    }
+}
+
+@keyframes falling-from-top {
+    0% {
+        top: 75px;
+        opacity: 0;
+    }
+
+    100% {
+        top: 90px;
+        opacity: 1;
+    }
+}

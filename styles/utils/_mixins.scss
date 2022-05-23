@@ -1,0 +1,45 @@
+@mixin pseudo($pos: absolute, $display: block, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+    @content;
+}
+
+@mixin margin-auto {
+    margin: { 
+        left: auto;
+        right: auto;
+    }
+}
+
+@mixin flex-center($flex-direction: row, $gap: 0em) {
+    display: flex;
+    gap: $gap;
+    flex-direction: $flex-direction;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin box-shadow {
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.08);
+}
+
+@mixin media-query($type: min, $width) {
+    @if $width == "" {
+        @error "Please select a width";
+    }
+    @if $type == max {
+        $width: $width - 1px;
+    }
+    @media (#{$type}-width: $width) {
+        @content;
+    }
+}
+
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}

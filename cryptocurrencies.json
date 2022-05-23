@@ -1,0 +1,81 @@
+{
+    "cryptoCurrencies": [
+        {
+            "icon": "/images/currencies/BTC.svg",
+            "displayName": "Bitcoin",
+            "displayAbbreviation": "BTC",
+            "apiName": "bitcoin",
+            "apiAbbreviation": "BTC"
+        },
+        {
+            "icon": "/images/currencies/ETH.svg",
+            "displayName": "Ethereum",
+            "displayAbbreviation": "ETH",
+            "apiName": "ethereum",
+            "apiAbbreviation": "ETH"
+        },
+        {
+            "icon": "/images/currencies/LTC.svg",
+            "displayName": "Litecoin",
+            "displayAbbreviation": "LTC",
+            "apiName": "litecoin",
+            "apiAbbreviation": "LTC"
+        },
+        {
+            "icon": "/images/currencies/BNB.svg",
+            "displayName": "Binance Coin",
+            "displayAbbreviation": "BNB",
+            "apiName": "binancecoin",
+            "apiAbbreviation": "BNB"
+        },
+        {
+            "icon": "/images/currencies/USDC.svg",
+            "displayName": "USD Coin",
+            "displayAbbreviation": "USDC",
+            "apiName": "usd-coin",
+            "apiAbbreviation": "USDC"
+        },
+        {
+            "icon": "/images/currencies/USDT.svg",
+            "displayName": "Tether",
+            "displayAbbreviation": "USDT",
+            "apiName": "tether",
+            "apiAbbreviation": "USDT"
+        },
+        {
+            "icon": "/images/currencies/DOGE.svg",
+            "displayName": "Dogecoin",
+            "displayAbbreviation": "DOGE",
+            "apiName": "dogecoin",
+            "apiAbbreviation": "DOGE"
+        },
+        {
+            "icon": "/images/currencies/LINK.svg",
+            "displayName": "Chainlink",
+            "displayAbbreviation": "LINK",
+            "apiName": "chainlink",
+            "apiAbbreviation": "LINK"
+        },
+        {
+            "icon": "/images/currencies/SHIB.svg",
+            "displayName": "Shiba Inu",
+            "displayAbbreviation": "SHIB",
+            "apiName": "shiba-inu",
+            "apiAbbreviation": "SHIB"
+        },
+        {
+            "icon": "/images/currencies/SOL.svg",
+            "displayName": "Solana",
+            "displayAbbreviation": "SOL",
+            "apiName": "solana",
+            "apiAbbreviation": "SOL"
+        },
+        {
+            "icon": "/images/currencies/XMR.svg",
+            "displayName": "Monero",
+            "displayAbbreviation": "XMR",
+            "apiName": "monero",
+            "apiAbbreviation": "XMR"
+        }  
+    ]
+}
