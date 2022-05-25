@@ -73,6 +73,7 @@ const Home: NextPage<Props> = ({ cryptoCurrencies, coinMultiplier }) => {
               coinMultiplier={coinMultiplier}
             />
           </div>
+          
         </div>
       </div>
     </>

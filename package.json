@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.8.0",
     "@mui/material": "^5.8.0",
+    "aphrodite": "^1.2.5",
     "axios": "^0.21.1",
     "coinpayments": "^2.1.3",
     "coinpayments-ipn": "^1.0.0",

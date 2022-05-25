@@ -2,6 +2,10 @@
 @use '../utils/inputs'as input;
 @use '../utils/animations'as animation;
 
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper{
+    border-radius: .75rem !important;
+    background-color: red;
+}
 .step__container {
     .header {
         margin-bottom: 1em;
